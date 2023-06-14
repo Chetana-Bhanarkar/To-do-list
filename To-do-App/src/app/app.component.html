@@ -1,0 +1,90 @@
+<div class="container">
+  <div class="bg-white">
+
+    <div class="row mt-4" style="height: 500px;">
+
+      <div class="col"></div>
+
+      <div class="col--10 bg-white shadow">
+
+        <div class="card bg-success mt-4 border-0">
+          <h3 class="text-white ps-3 pt-2 pb-2 text-center">To do list</h3>
+        </div>
+
+        <div class="shadow">
+          <div class="input-group p-4">
+            <textarea rows="1" cols="45" class="form-control border-0 rounded mx-2 shadow" placeholder="Enter todo task"
+              name="work" ngModel="_todoModel.work" [(ngModel)]="todo_list_model.work"></textarea>
+            <input type="date" class="form-control rounded border-0 mx-2 shadow" placeholder="choose date" name="date"
+              ngModel="_todoModel.date" [(ngModel)]="todo_list_model.date">
+            <input type="text" class="form-control rounded mx-2 border-0 shadow" placeholder="Status" name="status"
+              ngModel="_todoModel.status" [(ngModel)]="todo_list_model.status">
+            <button class="btn btn-outline-success rounded" type="button" (click)="add()">+</button>
+          </div>
+        </div>
+
+        <h4 class="text-success mt-4">Tasks : </h4>
+
+        <div style="overflow-y: auto; height: 300px;" class="my-4">
+          <div class="m-3">
+            <div class="p-2 shadow border-0">
+              <table class="table">
+                <thead style="position: sticky; top: 0">
+                  <tr>
+                    <th scope="col">id</th>
+                    <th scope="col">task</th>
+                    <th scope="col">date</th>
+                    <th scope="col">status</th>
+                    <th scope="col" colspan="2" class="text-center">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let item of taskArr">
+                    <td style="width: 20px;">{{item.id}}</td>
+                    <td style="width: 35rem;">{{item.work}}</td>
+                    <td style="width: 9rem;">{{item.date}}</td>
+                    <td style="width: 9rem;">{{item.status}}</td>
+                    <td><button class="btn btn-outline-warning rounded" type="button"
+                        (click)="call(item)" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Update</button></td>
+                    <td> <button class="btn btn-outline-danger rounded" type="button"
+                        (click)="deleteTask(item)">Delete</button></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Edit task</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <div class="input-group p-4">
+                  <textarea rows="1" cols="45" class="form-control border-0 rounded mx-2 shadow" placeholder="Enter todo task"
+                    name="work" ngModel="_todoModel.work" [(ngModel)]="editTaskwork"></textarea>
+                  <input type="date" class="form-control rounded border-0 mx-2 shadow" placeholder="choose date" name="date"
+                    ngModel="_todoModel.date" [(ngModel)]="editTaskdate">
+                  <input type="text" class="form-control rounded mx-2 border-0 shadow" placeholder="Status" name="status"
+                    ngModel="_todoModel.status" [(ngModel)]="editTaskstatus">
+                  <button class="btn btn-outline-success rounded" data-bs-dismiss="modal"  type="button" (click)="editTask()">Update</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="col"></div>
+
+    </div>
+
+  </div>
+
+</div>
