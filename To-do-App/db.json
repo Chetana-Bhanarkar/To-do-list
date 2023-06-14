@@ -1,0 +1,42 @@
+{
+  "list": [
+    {
+      "id": 1,
+      "work": "Ticekt Book",
+      "date": "2023-06-04",
+      "day": "",
+      "status": "todo"
+    },
+    {
+      "id": 2,
+      "work": "complete all tasks",
+      "date": "2023-06-05",
+      "day": "",
+      "status": "pending"
+    },
+    {
+      "id": 3,
+      "work": "bus-ticket book",
+      "day": "",
+      "status": "pending"
+    },
+    {
+      "work": "complete the notes",
+      "date": "2023-06-03",
+      "id": 4,
+      "status": "completed"
+    },
+    {
+      "work": "deploy project",
+      "date": "2023-06-27",
+      "id": 5,
+      "status": "pending"
+    },
+    {
+      "work": "make ipl api",
+      "date": "2023-06-24",
+      "status": "pending",
+      "id": 6
+    }
+  ]
+}
