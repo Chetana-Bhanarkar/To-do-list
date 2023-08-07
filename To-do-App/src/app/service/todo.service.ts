@@ -17,7 +17,7 @@ export class TodoService {
   createTodo(todo : ToDo) : Observable<Object>{
     return this.http.post(`${this.Base_URL}`, todo) ;
   }
-  
+
   getList():Observable<Object>{
     return this.http.get(`${this.Base_URL}`)
   }
