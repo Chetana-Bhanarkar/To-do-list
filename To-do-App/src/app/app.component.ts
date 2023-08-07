@@ -76,7 +76,9 @@ add(){
     this._todoModel = todo;
     console.log('call');
   }
-//delete 
+//delete function 
+
+
   deleteTask(todo : ToDo){
     this.todoService.deleteTask(todo).subscribe(res => {
       this.ngOnInit();
