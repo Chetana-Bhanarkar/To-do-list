@@ -89,6 +89,9 @@ add(){
     })
   }
 
+
+  // getter and setter of model 
+  
   public get todo_list_model(): ToDo {
     return this._todoModel
   }
