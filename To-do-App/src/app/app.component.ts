@@ -30,10 +30,6 @@ export class AppComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.addTask = ' ';
-    this.editTaskwork = ' ';
-    this.editTaskdate = ' ';
-    this.editTaskstatus = ' ';
     this.getList() ;
   }
 
@@ -41,7 +37,6 @@ export class AppComponent implements OnInit {
       this.addTask = ' ';
      this.todoService.createTodo(todo).pipe(finalize(()=>(this.loginBtnSpinner = false))).subscribe(data  => {
       this.ngOnInit()
-
     }, err => {
       alert('error!')
     })
@@ -79,13 +74,9 @@ add(){
 
   call(todo : ToDo){
     this._todoModel = todo;
-    this.editTaskwork = todo.work ;
-    this.editTaskdate = todo.date ;
-    this.editTaskstatus = todo.status ;
-
     console.log('call');
   }
-
+//delete 
   deleteTask(todo : ToDo){
     this.todoService.deleteTask(todo).subscribe(res => {
       this.ngOnInit();
